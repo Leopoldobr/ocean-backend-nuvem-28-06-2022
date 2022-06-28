@@ -2,8 +2,12 @@ const express = require("express");
 const { MongoClient, ObjectId } = require("mongodb");
 
 //const url = "mongodb://localhost:27017";
-const url = "mongodb+srv://m001-student:m001-studen@cluster0.b3frz.mongodb.net/?retryWrites=true&w=majority";
-const dbName = "ocean_bancodedados_27_06_2022";
+//const url = "mongodb+srv://m001-student:m001-studen@cluster0.b3frz.mongodb.net/?retryWrites=true&w=majority";
+//const dbName = "ocean_bancodedados_27_06_2022";
+
+const url = "mongodb://mongo:3O60yY25fsCVEV3kEXIp@containers-us-west-45.railway.app:7331/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false"
+//const url = "mongodb://localhost:27107";
+const dbName = "ocean_nuvem_16_05_2022"
 
 async function main() {
   // Conexão com o banco de dados
