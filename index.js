@@ -5,20 +5,20 @@ const { MongoClient, ObjectId } = require("mongodb");
 //const url = "mongodb+srv://m001-student:m001-studen@cluster0.b3frz.mongodb.net/?retryWrites=true&w=majority";
 //const dbName = "ocean_bancodedados_27_06_2022";
 
-const url = "mongodb://mongo:3O60yY25fsCVEV3kEXIp@containers-us-west-45.railway.app:7331/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false"
+//const url = "mongodb://mongo:3O60yY25fsCVEV3kEXIp@containers-us-west-45.railway.app:7331/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false"
 //const url = "mongodb://localhost:27107";
-const dbName = "ocean_nuvem_16_05_2022"
+//const dbName = "ocean_nuvem_16_05_2022"
 
 async function main() {
   // Conexão com o banco de dados
 
   console.log("Conectando ao banco de dados...");
 
-  const client = await MongoClient.connect(url);
+  //const client = await MongoClient.connect(url);
 
-  const db = client.db(dbName);
+  //const db = client.db(dbName);
 
-  const collection = db.collection("herois");
+  //const collection = db.collection("herois");
 
   console.log("Conexão realizada com sucesso!");
 
@@ -38,8 +38,8 @@ async function main() {
 
   // Endpoint Read All - [GET] /herois
   app.get("/herois", async function (req, res) {
-    const documentos = await collection.find().toArray();
-
+    //const documentos = await collection.find().toArray();
+    res.status(200).json(herois);
     res.send(documentos);
   });
 
@@ -47,7 +47,7 @@ async function main() {
   app.get("/herois/:id", async function (req, res) {
     const id = req.params.id;
 
-    const item = await collection.findOne({ _id: new ObjectId(id) });
+    //const item = await collection.findOne({ _id: new ObjectId(id) });
 
     res.send(item);
   });
